@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Netflix(props) {
+function Netflix() {
   return <div>Netflix</div>
 }
 

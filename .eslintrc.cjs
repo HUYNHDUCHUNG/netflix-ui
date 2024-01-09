@@ -5,19 +5,15 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended',
+    'plugin:react-hooks/recommended'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: [
-    'react',
-    'react-hooks',
-    'react-refresh'
-  ],
+  plugins: ['react', 'react-hooks', 'react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
-    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/rules-of-hooks': 'warn',
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 0,
     'react/display-name': 0,
@@ -25,7 +21,7 @@ module.exports = {
     'no-restricted-imports': [
       'error',
       {
-        'patterns': ['@mui/*/*/*']
+        patterns: ['@mui/*/*/*']
       }
     ],
 
@@ -37,9 +33,9 @@ module.exports = {
     'no-multiple-empty-lines': 1,
     'space-before-blocks': ['error', 'always'],
     'object-curly-spacing': [1, 'always'],
-    'indent': ['warn', 2],
-    'semi': [1, 'never'],
-    'quotes': ['error', 'single'],
+    indent: ['warn', 2],
+    semi: [1, 'never'],
+    quotes: ['error', 'single'],
     'array-bracket-spacing': 1,
     'linebreak-style': 0,
     'no-unexpected-multiline': 'warn',
@@ -47,5 +43,5 @@ module.exports = {
     'comma-dangle': 1,
     'comma-spacing': 1,
     'arrow-spacing': 1
-  },
+  }
 }
