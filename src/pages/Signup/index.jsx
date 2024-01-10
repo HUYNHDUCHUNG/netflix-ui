@@ -4,12 +4,14 @@ import Header from '../../components/Header'
 import classNames from 'classnames/bind'
 import styles from './Signup.module.scss'
 import { firebaseAuth } from '../../utils/firebase-config'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
 
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false)
+  const navigate = useNavigate()
   const [formValue, setFormValue] = useState({
     email: '',
     password: ''
@@ -23,6 +25,10 @@ function SignUp() {
       console.log(e)
     }
   }
+
+  onAuthStateChanged(firebaseAuth, (currentUser) => {
+    if (currentUser) navigate('/')
+  })
   return (
     <div className={cx('container')}>
       <BackgroundImage />

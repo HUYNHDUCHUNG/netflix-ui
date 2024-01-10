@@ -1,7 +1,17 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import NavBar from '../../components/Navbar'
 function Netflix() {
-  return <div>Netflix</div>
+  const [isScrolled, setIsScrolled] = useState(false)
+  window.scroll = () => {
+    setIsScrolled(window.ScrollY === 0 ? false : true)
+    return () => (window.scroll = null)
+  }
+
+  return (
+    <div>
+      <NavBar isScrolled={isScrolled} />
+    </div>
+  )
 }
 
 export default Netflix
