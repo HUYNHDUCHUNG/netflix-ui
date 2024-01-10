@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import BackgroundImage from '../../components/BackgroundImage'
 import Header from '../../components/Header'
 import classNames from 'classnames/bind'
 import styles from './Login.module.scss'
 import { firebaseAuth } from '../../utils/firebase-config'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
+import { onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
